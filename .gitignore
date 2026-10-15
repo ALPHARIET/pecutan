@@ -1,0 +1,14 @@
+# Konfigurasi lokal Claude Code
+.claude/
+
+# Hasil paket untuk dibagikan
+*.zip
+*.crx
+*.pem
+
+# Sistem operasi & editor
+Thumbs.db
+Desktop.ini
+.DS_Store
+.vscode/
+.idea/
