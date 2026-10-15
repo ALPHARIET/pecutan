@@ -1,0 +1,45 @@
+{
+  "manifest_version": 3,
+  "name": "Pecutan",
+  "version": "1.0.0",
+  "description": "Cambuk menempel di kursor. Klik kiri untuk mencambuk AI-mu di ChatGPT dan Claude.",
+  "permissions": ["storage"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_title": "Pecutan",
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*",
+        "https://chat.openai.com/*",
+        "https://claude.ai/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "commands": {
+    "toggle-enabled": {
+      "suggested_key": { "default": "Alt+Shift+W" },
+      "description": "Aktifkan / matikan cambuk"
+    },
+    "toggle-mute": {
+      "suggested_key": { "default": "Alt+Shift+M" },
+      "description": "Nyalakan / matikan suara"
+    }
+  }
+}
